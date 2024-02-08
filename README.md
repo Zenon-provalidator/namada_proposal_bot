@@ -33,16 +33,16 @@ WantedBy=multi-user.target
 ```
 
 ### Enable Service
-sudo systemctl enable proposal_bot.service
+sudo systemctl enable namada_proposal_bot.service
 
 ### Config
 Change to `local1.yaml.exam` to `prod.yaml` in the `/go/src/github.com/namada_proposal_bot/config` folder and Save the config fit for you.
 
 ### Start Service
-sudo systemctl start proposal_bot.service
+sudo systemctl start namada_proposal_bot.service
 
 ### Check logs
-sudo journalctl -fu proposal_bot.service
+sudo journalctl -fu namada_proposal_bot.service
 
 ## DataBase
 
