@@ -7,21 +7,21 @@
 Clone `https://github.com/Zenon-provalidator/namada_proposal_bot` in the `/go/src/github.com/` folder
 
 ### Make binary
-Do `go build` in the `/go/src/github.com/proposal_bot` folder
+Do `go build` in the `/go/src/github.com/namada_proposal_bot` folder
 
 ### Create Service File
-Create a `proposal_bot.service` file in the `/etc/systemd/system` folder with the following code snippet. Make sure to replace USER with your Linux user name. You need sudo previlege to do this step.
+Create a `namada_proposal_bot.service` file in the `/etc/systemd/system` folder with the following code snippet. Make sure to replace USER with your Linux user name. You need sudo previlege to do this step.
 ```
 [Unit]
-Description=proposal_bot daemon
+Description=namada_proposal_bot daemon
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$HOME/go/src/github.com/proposal_bot/proposal_bot
-WorkingDirectory=$HOME/go/src/github.com/proposal_bot/
-Environment=DAEMON_NAME=proposal_bot
-Environment=DAEMON_HOME=$HOME/go/src/github.com/proposal_bot
+ExecStart=$HOME/go/src/github.com/namada_proposal_bot/namada_proposal_bot
+WorkingDirectory=$HOME/go/src/github.com/namada_proposal_bot/
+Environment=DAEMON_NAME=namada_proposal_bot
+Environment=DAEMON_HOME=$HOME/go/src/github.com/namada_proposal_bot
 Environment=DAEMON_LOG_BUFFER_SIZE=512
 
 Restart=on-failure
@@ -36,7 +36,7 @@ WantedBy=multi-user.target
 sudo systemctl enable proposal_bot.service
 
 ### Config
-Change to `local1.yaml.exam` to `prod.yaml` in the `/go/src/github.com/proposal_bot/config` folder and Save the config fit for you.
+Change to `local1.yaml.exam` to `prod.yaml` in the `/go/src/github.com/namada_proposal_bot/config` folder and Save the config fit for you.
 
 ### Start Service
 sudo systemctl start proposal_bot.service
